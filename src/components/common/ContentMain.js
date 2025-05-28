@@ -1,21 +1,14 @@
 import React from 'react';
-
 class ContentMain extends React.Component {
     render() {
-        const mainPost = {
-            title: 'Welcome to my first React post!',
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            author: 'John Doe',
-            date: '27-05-2025',
-        }
-
+        const { post } = this.props
         return (
             <main style={styles.container}>
                 <article style={styles.article}>
-                    <h2 style={styles.title}>{mainPost.title}</h2>
-                    <p style={styles.content}>{mainPost.content}</p>
+                    <h2 style={styles.title}>{post.title}</h2>
+                    <p style={styles.content}>{post.content}</p>
                     <footer style={styles.meta}>
-                        <em>Written by {mainPost.author} on {mainPost.date}</em>
+                        <em>Written by {post.author} on {post.date}</em>
                     </footer>
                 </article>
             </main>

@@ -1,13 +1,7 @@
 import React from 'react';
-
 class ContentLeft extends React.Component {
     render() {
-        const categories = [
-            'Kitchen',
-            'Sport',
-            'Music',
-        ]
-
+        const { categories } = this.props
         return (
             <div style={styles.container}>
                 <h3 style={styles.title}>Categories</h3>

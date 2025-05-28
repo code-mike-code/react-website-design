@@ -2,12 +2,10 @@ import React from 'react';
 import Header from './layout/Header';
 import Content from './layout/Content';
 import Footer from './layout/Footer';
-
-
 class App extends React.Component {
     render() {
         return (
-            <div>
+            <div style={styles.appContainer}>
                 <Header />
                 <Content />
                 <Footer />

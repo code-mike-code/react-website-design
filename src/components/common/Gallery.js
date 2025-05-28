@@ -1,23 +1,18 @@
 import React from 'react';
-
 class Gallery extends React.Component {
     render() {
-        const images = [
-            {id: 1, title: 'Macaroon', url: 'https://cdn.pixabay.com/photo/2022/06/29/08/27/macaroon-7291242_1280.jpg'},
-            {id: 2, title: 'Fresh Mint', url: 'https://cdn.pixabay.com/photo/2016/10/25/17/59/mint-1769560_960_720.jpg'},
-            {id: 3, title: 'Sea Turtle', url: 'https://cdn.pixabay.com/photo/2023/08/19/05/31/green-sea-turtle-8199770_1280.jpg'},
-            {id: 4, title: 'Birds', url: 'https://cdn.pixabay.com/photo/2019/10/15/08/02/birds-4551002_960_720.jpg'},
-        ]
+        const { title, images } = this.props
 
         return (
             <div style={styles.gallery}>
-                <h2 style={styles.title}>Gallery</h2>
+                <h2 style={styles.title}>{title}</h2>
                 <div style={styles.container}>{images.map(image => (
                     <div key={image.id} style={styles.imageCard}>
                         <img 
                             src={image.url} 
                             alt={image.title}
-                            style={styles.image} />
+                            style={styles.image} 
+                        />
                         <h4 style={styles.imgTitle}>{image.title}</h4>
                     </div>
                 ))}

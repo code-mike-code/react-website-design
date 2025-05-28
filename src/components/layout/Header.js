@@ -2,20 +2,21 @@ import React from 'react';
 import Logo from '../common/Logo';
 import Nav from '../common/Nav';
 
-const Header = () => {
+class Header extends React.Component {
+    render() {
+        const menuItems = [
+            {text: 'Home', url: '/home'},
+            {text: 'About', url: '/about'},
+            {text: 'Contact', url: '/contact'},
+        ]
 
-    const menuItems = [
-        {text: 'Home', url: '/home'},
-        {text: 'About', url: '/about'},
-        {text: 'Contact', url: '/contact'},
-    ]
-
-    return (
-        <header style={styles.header}>
-            <Logo />
-            <Nav items={menuItems} />
-        </header>
-    )
+        return (
+            <header style={styles.header}>
+                <Logo />
+                <Nav items={menuItems} />
+            </header>
+        )
+    }
 }
 
 const styles = {
