@@ -29,6 +29,9 @@ This project is a simple React application developed as an introductory task. It
 *   HTML5
 *   CSS (via inline styles in JavaScript)
 
+*   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+*   ![JavaScript](https://img.shields.io/badge/JavaScript-grey?style=for-the-badge&logo=javascript)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
