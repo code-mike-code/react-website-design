@@ -22,16 +22,13 @@ This project is a simple React application developed as an introductory task. It
     *   `PagePost.js`: A basic page view for displaying a single post.
 
 ## 🛠 Tech Stack
-*   !React
-*   !JavaScript
-*   !Webpack
-*   !Babel
-*   HTML5
-*   CSS (via inline styles in JavaScript)
 
+  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/JavaScript-grey?style=for-the-badge&logo=javascript)
   ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black)
+  ![Babel](https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=babel&logoColor=black)
 
 ## 🚀 Getting Started
 
