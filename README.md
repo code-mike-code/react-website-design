@@ -1,147 +1,76 @@
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+# React Introduction - react-website-design
 
-&nbsp;
+## 🧭 Project Overview
+This project is a simple React application developed as an introductory task. It demonstrates fundamental React concepts, including component-based architecture, props, state, and basic application structure. The application showcases a mock blog/content layout with a header, footer, main content area, sidebars, and an image gallery.
 
+## ✨ Key Features & Components
+*   **Main Application (`App.js`):** The root component that structures the overall page layout.
+*   **Layout Components:**
+    *   `Header.js`: Displays the site logo and main navigation.
+    *   `Content.js`: Organizes the main content area, including sidebars and a gallery. It also manages some initial state for the content displayed.
+    *   `Footer.js`: Contains footer navigation and copyright information.
+*   **Content Display:**
+    *   `ContentMain.js`: Renders a sample blog post.
+    *   `ContentLeft.js`: Displays a list of categories.
+    *   `ContentRight.js`: Shows a list of popular posts.
+*   **Image Gallery (`Gallery.js`):** A component to display a collection of images with titles. Data is sourced from `galleryData.js` and passed via props.
+*   **Reusable UI Elements:**
+    *   `Nav.js`: A flexible navigation component used in both header and footer.
+    *   `Logo.js`: A simple component for the site logo.
+*   **Page Views (Examples):**
+    *   `PageGallery.js`: A dedicated page view showcasing the image gallery, demonstrating how components can be assembled into different page structures.
+    *   `PagePost.js`: A basic page view for displaying a single post.
 
-# Templates
+## 🛠 Tech Stack
+*   !React
+*   !JavaScript
+*   !Webpack
+*   !Babel
+*   HTML5
+*   CSS (via inline styles in JavaScript)
 
-## Wprowadzenie
+## 🚀 Getting Started
 
-React umożliwia budowanie stron z małych części – komponentów.
+### Prerequisites
+*   Node.js and npm (or yarn) installed on your system.
 
-W tym projekcie zbudujemy kilka małych i dużych komponentów do wielokrotnego wykorzystania. Z takich komponentów możemy tworzyć elastyczne szablony, które pozwalają szybciej budować strony internetowe. 
+### Installation
+1.  Clone the repository (if applicable) or navigate to the project directory.
+2.  Install the project dependencies:
+    ```bash
+    npm install
+    ```
 
-### Małe komponenty
-
-Na początek skupimy się na częściach składowych każdej strony, takich jak:
-
-* nagłówek `<Header/>`
-    * logo `<Logo/>`
-    * nawigacja `<Nav/>`
-* zawartość `<Content/>`
-    * lewa kolumna `<ContentLeft/>`
-    * prawa kolumna `<ContentRight/>`
-    * właściwa treść `<ContentMain/>`
-* stopka `<Footer/>`
-    * prawa autorskie `<Copyrights/>`
-    * menu `<Nav/>`
-
-Każdy z tych elementów może zawierać inne mniejsze komponenty. To od Ciebie zależy, jak bardzo je podzielisz.
-
-Możesz np. dla `<Content/>` przygotować kilka dodatkowych komponentów – do osadzenia wedle uznania w poszczególnych kolumnach, np.:
-
-* wpis, tj. treść artykułu, `<Post/>` – przez props otrzymuje informacje o wpisie: tytuł, treść, autora, datę utworzenia
-* kategoria, tj. grupa kilku wpisów, `<Category/>` – przez props otrzymuje tablicę zawierającą informacje o wpisach (podobnie jak w `<Menu/>` – rozwiązaniu realizowanym w zadaniach do tego modułu).
-* galeria, lista zdjęć,  `<Gallery/>` – przez props otrzymuje informacje o zdjęciach w formie tablicy obiektów, które zawierają adres do zdjęcia, datę utworzenia i autora.
-
-> Komponenty również można przekazywać przez props. Przykładowo do komponentu `<ContentMain/>` możemy przekazać komponent `<Gallery/>` w taki sposób: `<ContentMain content={ <Gallery/> }>`. Wówczas wewnątrz `<ContentMain/>` odwołamy się do przekazanego komponentu przez `this.props.content`, np.:
-
-```jsx
-const Gallery = props => {
-    return (
-        <section>
-            {props.content}
-        </section>
-    )
-}
+### Running the Development Server
+To start the Webpack development server and view the application:
+```bash
+npm run start
 ```
+*(This command assumes a `start` script is configured in your `package.json` to execute `webpack-dev-server` or a similar command, which is typical for projects using the provided `webpack.config.js`.)*
 
-### Duże komponenty
+The application will then be accessible in your web browser, usually at:
+`http://localhost:8080`
 
-Duże komponenty to takie, które na podstawie mniejszych renderują całą stronę.
+## 🎨 Styling
+Styling in this project is primarily handled using **inline styles** defined as JavaScript objects within each component file. This approach is common for smaller projects or for demonstrating component-specific styling in React.
 
-Możemy stworzyć ich kilka, np.:
+## ⚙️ Webpack Configuration
+The project uses Webpack, configured via `webpack.config.js`, for the following tasks:
+*   **JavaScript Bundling:** Transpiles ES6+ JavaScript (including JSX) to browser-compatible code using `babel-loader` and bundles it into a single file (`app.min.js`).
+*   **HTML Generation:** Uses `HtmlWebpackPlugin` to generate an `index.html` file in the `build` directory, automatically injecting the bundled JavaScript.
+*   **Development Server:** (Implicitly) Webpack's development server provides live reloading and serves the application during development.
 
-* strona wpisu `<PagePost/>`
-* strona z listą wpisów `<PageCategory/>`
-* strona z galerią `<PageGallery/>`.
+The main entry point for Webpack is `src/app.js`, and the output is directed to the `build` folder.
 
+## 📌 Lessons Learned (from this project structure)
+*   **Component-Based Architecture:** Understanding how to break down a UI into isolated, reusable React components.
+*   **Props:** Learning to pass data and functionality down the component tree from parent to child components.
+*   **State:** Basic usage of component-local state (`this.state` in class components) to manage dynamic data and trigger re-renders.
+*   **JSX:** Writing UI structures declaratively using JSX syntax.
+*   **Project Setup:** Gaining familiarity with a basic React project structure and a simple Webpack configuration for bundling and development.
+*   **Modularity:** Organizing components into logical directories (`layout`, `common`) for better code organization and maintainability.
+*   **Data Flow:** Observing how data (e.g., `galleryData`, `post` info) is defined, passed, and rendered within components.
 
-Te komponenty renderują mniejsze komponenty, które utworzyłeś w pierwszej kolejności.
-
-Struktura komponentu `<PagePost/>` może prezentować się następująco:
-
-```jsx
-const post = {
-    title: 'Hello React',
-    body: 'Lorem ipsum....',
-    author: 'Mirek Lorek',
-    created: '2019-01-01 01:02:03'
-}
-
-const PagePost = () => {
-    return (
-        <>
-            <Header />
-            <Content
-                main={ 
-                    <Post data={ post } /> 
-                }
-            />
-            <Footer/>
-        </>
-    );
-}
-```
-
-Oczywiście poszczególne komponenty mogą wykorzystywać pozostałe komponenty, np.:
-
-```jsx
-const menuItems = [
-    {text: 'start', url: '/'},
-    {text: 'regulamin', url: '/regulamin'},
-];
-
-const Footer = () => {
-    return (
-        <footer>
-            <Copyrights />
-            <Nav items={ menuItems } />
-        </footer>
-    )
-}
-```
-
-
-## Implementacja
-
-Początkowo utwórz komponenty, które mają wprowadzone dane „na sztywno” (bez przekazywania danych przez props) – aby zobaczyć, jak się one prezentują i jak wygląda struktura całej strony.
-
-Potem zacznij przekazywać dane przez props, co zwiększy elastyczność komponentów i wygodę w ich ponownym wykorzystaniu. 
-
-Jeśli teraz sprawi Ci to trudność, to nie przejmuj się. Ten temat będziemy jeszcze omawiać i ćwiczyć w następnych materiałach.
-
-Postaraj się jednak wstępnie ostylować komponenty za pomocą atrybutu `style` i obiektów do niego przekazanych.
-
-Możesz to zrobić przez przekazanie odpowiednich informacje przez props, np.:
-
-```jsx
-<div style={ this.props.styles.row } />
-```
-
-Tutaj dobrym pomysłem będzie zdefiniowanie domyślnych wartości propsów za pomocą `defaultProps` lub bezpośrednio – przez przypisanie wartości domyślnych do odbieranych w komponencie propsów.
-
-Postaraj się również wszystkie komponenty umieścić w osobnych plikach w katalogu `components` i importować je oraz eksportować w odpowiednich miejscach.
-
-### Webpack
-
-Pamiętaj, że webpack musi być cały czas uruchomiony, aby kod JSX mógł być transpilowany do JS. Dzięki temu będziesz widzieć efekty swojej pracy.
-
-> **Uwaga!** Nie używaj plików graficznych w tym projekcie, ponieważ [konfiguracja webpacka](https://www.robinwieruch.de/webpack-images) nie została do tego przygotowana i przy próbie ich wykorzystania pojawią się błędy.
-
-## Podsumowanie
-
-To zadanie umożliwi Ci przećwiczenie budowania komponentów, co jest niezbędne przy pracy z Reactem. 
-
-Wykorzystuj naprzemiennie formę klasową i funkcyjną komponentów, aby obie były dla Ciebie zrozumiałe.
-
-Zwróć uwagę na to, jak wygodnie można wielokrotnie wykorzystywać małe komponenty. Zazwyczaj im są mniejsze, tym łatwiej je zastosować w wielu miejscach.
-
-
-&nbsp;
-
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+## 🙏 Acknowledgements
+*   This project was created as a learning exercise to understand the fundamentals of React.
+*   Inspired by tasks and guidance from devmentor.pl.
