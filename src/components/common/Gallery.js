@@ -6,7 +6,7 @@ class Gallery extends React.Component {
         return (
             <div style={styles.gallery}>
                 <h2 style={styles.title}>{title}</h2>
-                <div style={styles.container}>{images.map(image => (
+                <div style={styles.container}>{images && images.map(image => (
                     <div key={image.id} style={styles.imageCard}>
                         <img 
                             src={image.url} 
@@ -21,7 +21,6 @@ class Gallery extends React.Component {
         )
     }
 }
-
 
 const styles = {
     gallery: {

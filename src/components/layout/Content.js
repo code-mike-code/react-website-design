@@ -17,6 +17,13 @@ class Content extends React.Component {
             author: 'John Doe',
             date: '27-05-2025',
         },
+        rightContent: {
+            popularPosts: [
+                {title: 'Most popular post!', views: '1000'},
+                {title: 'Second most popular post!', views: '700'},
+                {title: 'Third most popular post!', views: '340'},
+            ],
+        },
         galleryData: {
             title: 'Gallery',
             images: [
@@ -25,18 +32,11 @@ class Content extends React.Component {
                 {id: 3, title: 'Sea Turtle', url: 'https://cdn.pixabay.com/photo/2023/08/19/05/31/green-sea-turtle-8199770_1280.jpg'},
                 {id: 4, title: 'Birds', url: 'https://cdn.pixabay.com/photo/2019/10/15/08/02/birds-4551002_960_720.jpg'},
             ]
-        },
-        rightContent: {
-            popularPosts: [
-                {title: 'Most popular post!', views: '1000'},
-                {title: 'Second most popular post!', views: '700'},
-                {title: 'Third most popular post!', views: '340'},
-            ],
         }
-}
+    }
 
     render() {
-        const {categories, post, galleryData, rightContent} = this.state;
+        const {categories, post, rightContent, galleryData} = this.state;
 
         return (
             <div style={styles.container}>
