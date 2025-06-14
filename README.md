@@ -31,7 +31,7 @@ This project is a simple React application developed as an introductory task. It
 
   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/JavaScript-grey?style=for-the-badge&logo=javascript)
-  ![React](https://img.shields.io/badge/React?style=for-the-badge&logo=react)
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ## 🚀 Getting Started
 
